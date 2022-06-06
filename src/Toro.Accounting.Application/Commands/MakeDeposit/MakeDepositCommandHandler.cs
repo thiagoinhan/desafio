@@ -1,14 +1,22 @@
 ﻿using Toro.Accounting.Application.Contracts;
+using Toro.Accounting.Application.Contracts.Persistence;
 using Toro.Accounting.Domain.Entities;
 
 namespace Toro.Accounting.Application.Commands
 {
     public class MakeDepositCommandHandler : ICommandHandler<MakeDepositCommand, MakeDepositCommandResponse>
     {
+        private readonly ICustomerRepository _customerRepository;
+
+        public MakeDepositCommandHandler(ICustomerRepository customerRepository)
+        {
+            _customerRepository = customerRepository;
+        }
+
         public async Task<MakeDepositCommandResponse> Handle(MakeDepositCommand command)
         {
             var makeDepositCommandResponse = new MakeDepositCommandResponse();
-            var validator = new MakeDepositCommandValidator();
+            var validator = new MakeDepositCommandValidator(_customerRepository);
             var validationResult = await validator.ValidateAsync(command);
 
             if (validationResult.Errors.Any())
