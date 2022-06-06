@@ -22,7 +22,7 @@ public class SpbController : ControllerBase
     [ProducesResponseType(typeof(MakeDepositCommandResponse), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> MakeDeposit(DepositEventDetails depositDetails)
     {
-        var command = new MakeDepositCommand(depositDetails.target.account, depositDetails.origin.cpf, depositDetails.amount);
+        var command = new MakeDepositCommand(depositDetails.@event, depositDetails.target.account, depositDetails.origin.cpf, depositDetails.amount);
         var response = await _commandDispatcher.Dispatch(command);
 
         if (response.ValidationErrors.Any())

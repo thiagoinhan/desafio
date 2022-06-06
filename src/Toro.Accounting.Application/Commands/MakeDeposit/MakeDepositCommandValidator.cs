@@ -5,11 +5,16 @@ namespace Toro.Accounting.Application.Commands
 {
     public class MakeDepositCommandValidator : AbstractValidator<MakeDepositCommand>
     {
+        private static string TransferEventTypeName = "TRANSFER";
         private readonly ICustomerRepository _customerRepository;
 
         public MakeDepositCommandValidator(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
+
+            RuleFor(p => p.EventType)
+                .Equal(TransferEventTypeName)
+                    .WithMessage("O evento deve ser uma transferência");
 
             RuleFor(p => p.OriginCPF)
                 .NotEmpty()
