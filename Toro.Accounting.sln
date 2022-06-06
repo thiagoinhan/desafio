@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toro.Accounting.Api", "src\Toro.Accounting.Api\Toro.Accounting.Api.csproj", "{7FD018AB-C445-4F6C-9F4E-B73374269B2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toro.Accounting.Domain", "src\Toro.Accounting.Domain\Toro.Accounting.Domain.csproj", "{14C1D3AD-8B13-4254-83DD-35C7CB20DFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toro.Accounting.Application", "src\Toro.Accounting.Application\Toro.Accounting.Application.csproj", "{E64C8950-8367-4E4D-9EDD-6EC35884B76E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toro.Accounting.Infrastructure", "src\Toro.Accounting.Infrastructure\Toro.Accounting.Infrastructure.csproj", "{2C4FDCAA-BBC5-49E3-AC86-2FC30F324089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toro.Accounting.Persistence", "src\Toro.Accounting.Persistence\Toro.Accounting.Persistence.csproj", "{D893047C-6F4F-4B21-9AE3-8B0F1C285452}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{42DC62E5-5BD1-4144-89C9-DBE4BF31B4FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F52CD609-DAC0-47FE-9F11-F78ECFF4F753}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD018AB-C445-4F6C-9F4E-B73374269B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD018AB-C445-4F6C-9F4E-B73374269B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD018AB-C445-4F6C-9F4E-B73374269B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD018AB-C445-4F6C-9F4E-B73374269B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C1D3AD-8B13-4254-83DD-35C7CB20DFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C1D3AD-8B13-4254-83DD-35C7CB20DFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C1D3AD-8B13-4254-83DD-35C7CB20DFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C1D3AD-8B13-4254-83DD-35C7CB20DFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64C8950-8367-4E4D-9EDD-6EC35884B76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64C8950-8367-4E4D-9EDD-6EC35884B76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64C8950-8367-4E4D-9EDD-6EC35884B76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64C8950-8367-4E4D-9EDD-6EC35884B76E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C4FDCAA-BBC5-49E3-AC86-2FC30F324089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C4FDCAA-BBC5-49E3-AC86-2FC30F324089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C4FDCAA-BBC5-49E3-AC86-2FC30F324089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C4FDCAA-BBC5-49E3-AC86-2FC30F324089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D893047C-6F4F-4B21-9AE3-8B0F1C285452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D893047C-6F4F-4B21-9AE3-8B0F1C285452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D893047C-6F4F-4B21-9AE3-8B0F1C285452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D893047C-6F4F-4B21-9AE3-8B0F1C285452}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FD018AB-C445-4F6C-9F4E-B73374269B2C} = {F52CD609-DAC0-47FE-9F11-F78ECFF4F753}
+		{14C1D3AD-8B13-4254-83DD-35C7CB20DFA8} = {F52CD609-DAC0-47FE-9F11-F78ECFF4F753}
+		{E64C8950-8367-4E4D-9EDD-6EC35884B76E} = {F52CD609-DAC0-47FE-9F11-F78ECFF4F753}
+		{2C4FDCAA-BBC5-49E3-AC86-2FC30F324089} = {42DC62E5-5BD1-4144-89C9-DBE4BF31B4FC}
+		{D893047C-6F4F-4B21-9AE3-8B0F1C285452} = {42DC62E5-5BD1-4144-89C9-DBE4BF31B4FC}
+		{42DC62E5-5BD1-4144-89C9-DBE4BF31B4FC} = {F52CD609-DAC0-47FE-9F11-F78ECFF4F753}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E92A98BD-C1E8-4567-AEA4-CFF2AD5A08A1}
+	EndGlobalSection
+EndGlobal
