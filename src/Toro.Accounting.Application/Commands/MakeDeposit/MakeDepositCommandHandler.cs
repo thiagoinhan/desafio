@@ -8,6 +8,18 @@ namespace Toro.Accounting.Application.Commands
         public async Task<MakeDepositCommandResponse> Handle(MakeDepositCommand command)
         {
             var makeDepositCommandResponse = new MakeDepositCommandResponse();
+            var validator = new MakeDepositCommandValidator();
+            var validationResult = await validator.ValidateAsync(command);
+
+            if (validationResult.Errors.Any())
+            {
+                makeDepositCommandResponse.Success = false;
+
+                foreach (var error in validationResult.Errors)
+                {
+                    makeDepositCommandResponse.ValidationErrors.Add(error.ErrorMessage);
+                }
+            }
 
             if (makeDepositCommandResponse.Success)
             {
