@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Toro.Accounting.Application\Toro.Accounting.Application.csproj" />
     <ProjectReference Include="..\Toro.Accounting.Infrastructure\Toro.Accounting.Infrastructure.csproj" />
   </ItemGroup>
