@@ -1,6 +1,5 @@
 ﻿using Toro.Accounting.Application.Contracts;
 using Toro.Accounting.Application.Contracts.Persistence;
-using Toro.Accounting.Domain.Entities;
 
 namespace Toro.Accounting.Application.Commands
 {
@@ -31,9 +30,9 @@ namespace Toro.Accounting.Application.Commands
 
             if (makeDepositCommandResponse.Success)
             {
-                //Just a mock
-                var customer = new Customer(Guid.NewGuid().ToString(), "test", "test", "12345678901", "123456", 0);
+                var customer = await _customerRepository.GetCustomerByAccountNumber(command.AccountNumber);
                 customer.Deposit(command.Amount);
+                await _customerRepository.UpdateAsync(customer);
             }
 
             return makeDepositCommandResponse;
