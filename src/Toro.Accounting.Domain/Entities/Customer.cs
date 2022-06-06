@@ -2,27 +2,28 @@
 
 namespace Toro.Accounting.Domain.Entities
 {
-    public class Customer : BaseEntity<string>
+    public class Customer : BaseEntity<Guid>
     {
-        public Customer(string id, string login, string name, string cpf, string accountNumber, decimal accountBalance)
+        public static string TableName = "Customers";
+
+        public Customer(Guid id, string login, string name, string cpf, string accountNumber, decimal accountBalance)
         {
             Id = id;
             Login = login;
             Name = name;
             CPF = cpf;
             AccountNumber = accountNumber;
-            _accountBalance = accountBalance;
+            AccountBalance = accountBalance;
         }
 
-        public string Login { get; set; }
-        public string Name { get; set; }
-        public string CPF { get; set; }
-        public string AccountNumber { get; set; }
-        private decimal _accountBalance { get; set; }
-        private decimal AccountBalance { get { return _accountBalance; } }
+        public string Login { get; private set; }
+        public string Name { get; private set; }
+        public string CPF { get; private set; }
+        public string AccountNumber { get; private set; }
+        public decimal AccountBalance { get; private set; }
         public void Deposit(decimal value)
         {
-            _accountBalance += value;
+            AccountBalance += value;
         }
     }
 }

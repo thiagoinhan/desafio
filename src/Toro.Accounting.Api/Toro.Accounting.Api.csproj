@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Toro.Accounting.Application\Toro.Accounting.Application.csproj" />
     <ProjectReference Include="..\Toro.Accounting.Infrastructure\Toro.Accounting.Infrastructure.csproj" />
+    <ProjectReference Include="..\Toro.Accounting.Persistence\Toro.Accounting.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
