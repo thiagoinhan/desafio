@@ -5,7 +5,7 @@ namespace Toro.Accounting.Application.Commands
 {
     public class MakeDepositCommandValidator : AbstractValidator<MakeDepositCommand>
     {
-        private static string TransferEventTypeName = "TRANSFER";
+        public static string TransferEventTypeName = "TRANSFER";
         private readonly ICustomerRepository _customerRepository;
 
         public MakeDepositCommandValidator(ICustomerRepository customerRepository)
@@ -28,7 +28,7 @@ namespace Toro.Accounting.Application.Commands
 
             RuleFor(p => p.Amount)                
                 .GreaterThan(0)
-                    .WithMessage("A quantida do depósito deve ser maior que zero");
+                    .WithMessage("A quantia do depósito deve ser maior que zero");
 
             RuleFor(p => p)
                 .MustAsync(OriginCPFShouldBeSameOfTarget)
