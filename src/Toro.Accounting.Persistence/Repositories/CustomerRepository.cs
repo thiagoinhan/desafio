@@ -17,7 +17,7 @@ namespace Toro.Accounting.Persistence.Repositories
 
         public async Task<Customer> GetCustomerByAccountNumber(string accountNumber)
         {
-            var customer = await collection.Find(w => w.AccountNumber == accountNumber).FirstAsync();
+            var customer = await collection.Find(w => w.AccountNumber == accountNumber).FirstOrDefaultAsync();
             return customer;
         }
 
@@ -25,7 +25,7 @@ namespace Toro.Accounting.Persistence.Repositories
         {
             var customerCPF = await collection.Find(w => w.AccountNumber == accountNumber)
                 .Project(c => c.CPF)
-                .FirstAsync();
+                .FirstOrDefaultAsync();
 
             return customerCPF;
         }
