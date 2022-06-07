@@ -21,9 +21,12 @@ namespace Toro.Accounting.Domain.Entities
         public string CPF { get; private set; }
         public string AccountNumber { get; private set; }
         public decimal AccountBalance { get; private set; }
-        public void Deposit(decimal value)
+        public void Deposit(decimal amount)
         {
-            AccountBalance += value;
+            if (amount <= 0)
+                throw new Exception("Deposit method should be used just for amounts greather than zero");
+
+            AccountBalance += amount;
         }
     }
 }
