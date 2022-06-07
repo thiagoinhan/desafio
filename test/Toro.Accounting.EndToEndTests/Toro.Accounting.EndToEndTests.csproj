@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Toro.Accounting.Application\Toro.Accounting.Application.csproj" />
+    <ProjectReference Include="..\Toro.Accounting.Commom.UnitTests\Toro.Accounting.Commom.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>
