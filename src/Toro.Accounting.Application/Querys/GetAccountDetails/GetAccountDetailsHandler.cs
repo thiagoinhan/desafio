@@ -4,11 +4,11 @@ using Toro.Accounting.Application.Dtos;
 
 namespace Toro.Accounting.Application.Querys.GetAccountDetails
 {
-    public class GetAccountDetailsHandler : IQueryHandler<GetAccountDetailsQuery, AccountDetails>
+    public class GetAccountDetailsQueryHandler : IQueryHandler<GetAccountDetailsQuery, AccountDetails>
     {
         private readonly ICustomerRepository _customerRepository;
 
-        public GetAccountDetailsHandler(ICustomerRepository customerRepository)
+        public GetAccountDetailsQueryHandler(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
         }
