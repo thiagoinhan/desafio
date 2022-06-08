@@ -3,6 +3,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using Toro.Accounting.Api.Dtos;
+using Toro.Accounting.Application.Commands;
 
 namespace Toro.Accounting.EndToEndTests.sbp.events
 {
@@ -41,9 +42,13 @@ namespace Toro.Accounting.EndToEndTests.sbp.events
             var client = _fixture.WebApplicationFactory.CreateClient();
             var response = await client.PostAsync("/spb/events", new StringContent(JsonSerializer.Serialize(depositEventDetails), Encoding.UTF8, "application/json"));
 
-            var message = await response.Content.ReadAsStringAsync();
-            message.ShouldBe("[\"O CPF da conta de origem é diferente do CPF da conta na Toro. Não é possível fazer um depósito entre contas de CPFs diferentes\"]");
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize<MakeDepositCommandResponse>(content, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
 
+            result.ValidationErrors.Any(error => error.Equals("O CPF da conta de origem é diferente do CPF da conta na Toro. Não é possível fazer um depósito entre contas de CPFs diferentes")).ShouldBeTrue();            
             response.StatusCode.ShouldBe(HttpStatusCode.BadRequest);
         }
     }
