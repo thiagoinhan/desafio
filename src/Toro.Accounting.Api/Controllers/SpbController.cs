@@ -27,7 +27,7 @@ public class SpbController : ControllerBase
 
         if (response.ValidationErrors.Any())
         {
-            return BadRequest(response.ValidationErrors);
+            return BadRequest(response);
         }
 
         return NoContent();
