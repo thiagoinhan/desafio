@@ -29,8 +29,6 @@ namespace Toro.Accounting.Infrastructure
                 return mongoClient.GetDatabase(serviceSettings.ServiceName);
             });
 
-            services.AddScoped(typeof(IGenericRepositoryAsync<>), typeof(GenericRepository<>));
-
             services.AddScoped<ICustomerRepository>(serviceProvider =>
             {
                 var database = serviceProvider.GetService<IMongoDatabase>();

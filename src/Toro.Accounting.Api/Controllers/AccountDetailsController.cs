@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Toro.Accounting.Api.Dtos;
-using Toro.Accounting.Application.Commands;
+using Toro.Accounting.Application.Contracts.Querys;
+using Toro.Accounting.Application.Dtos;
+using Toro.Accounting.Application.Querys.GetAccountDetails;
 
 namespace Toro.Accounting.Controllers;
 
@@ -8,18 +9,26 @@ namespace Toro.Accounting.Controllers;
 [Route("account")]
 public class AccountDetailsController : ControllerBase
 {
-    public AccountDetailsController()
+    protected readonly IQueryDispatcher _queryDispatcher;
+
+    public AccountDetailsController(IQueryDispatcher queryDispatcher)
     {
+        _queryDispatcher = queryDispatcher;
     }
 
     [Route("details")]
     [HttpGet()]
     [ProducesResponseType(typeof(AccountDetails), StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> GetLoggedUserAccountDetails(string userId)
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<AccountDetails>> GetLoggedUserAccountDetails(string userId)
     {
         //Apenas para fins de simplificação, o ID do usuário será obtido via URL. Porém numa aplicação real, isso representaria uma falha de segurança
         //caso não fosse tratado corretamente
-        return Ok(new AccountDetails("352", "001", "123456", "Monkey D. Luffy", 200));
+        var accountDetails = await _queryDispatcher.Dispatch(new GetAccountDetailsQuery(userId));
+
+        if (accountDetails == null)
+            return NotFound();
+
+        return Ok(accountDetails);
     }
 }
