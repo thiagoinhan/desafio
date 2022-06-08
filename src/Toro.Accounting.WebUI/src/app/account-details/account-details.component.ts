@@ -13,9 +13,9 @@ export class AccountDetailsComponent implements OnInit {
   accountDetails: IAccountDetails = {
     bank: "",
     branch: "",
-    name: "",
+    userName: "",
     accountNumber: "",
-    amount: 0
+    accountBalance: 0
   };
 
   userId: string = "";

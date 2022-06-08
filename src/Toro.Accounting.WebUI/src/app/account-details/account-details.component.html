@@ -1,15 +1,14 @@
 <div class="container p-5">
-    <div class="row">
+    <div class="row" *ngIf="accountDetails.userName">
         <div class="col-4 offset-4">
             <div class="text-center text-purple">
-                <h3>{{accountDetails.name}}</h3>
+                <h3>{{accountDetails.userName}}</h3>
             </div>
             <div class="card mt-3">
                 <div class="card-header card-purple">
                     Meus dados bancários
                 </div>
                 <div class="card-body">
-                    <div>Nome: {{accountDetails.name}}</div>
                     <div>Banco: {{accountDetails.bank}}</div>
                     <div>Agência: {{accountDetails.branch}} </div>
                     <div>Conta: {{accountDetails.accountNumber}} </div>
@@ -20,8 +19,15 @@
                     Saldo disponível em conta
                 </div>
                 <div class="card-body">
-                    <div>Saldo: {{accountDetails.amount | currency:'BRL'}} </div>
+                    <div>Saldo: {{accountDetails.accountBalance | currency:'BRL'}} </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="!accountDetails.userName">
+        <div class="col-4 offset-4">
+            <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                <strong>Usuário não encontrado!</strong>
             </div>
         </div>
     </div>
