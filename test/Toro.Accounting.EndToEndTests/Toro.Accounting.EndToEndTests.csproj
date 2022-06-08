@@ -29,4 +29,8 @@
     <ProjectReference Include="..\Toro.Accounting.Commom.UnitTests\Toro.Accounting.Commom.UnitTests.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="account\details\" />
+  </ItemGroup>
+
 </Project>
