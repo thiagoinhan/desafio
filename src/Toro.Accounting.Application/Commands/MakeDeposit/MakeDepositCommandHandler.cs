@@ -1,4 +1,4 @@
-﻿using Toro.Accounting.Application.Contracts;
+﻿using Toro.Accounting.Application.Contracts.Commands;
 using Toro.Accounting.Application.Contracts.Persistence;
 
 namespace Toro.Accounting.Application.Commands

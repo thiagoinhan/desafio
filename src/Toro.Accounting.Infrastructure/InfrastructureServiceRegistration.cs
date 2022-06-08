@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Toro.Accounting.Application.Contracts;
+using Toro.Accounting.Application.Contracts.Commands;
+using Toro.Accounting.Application.Contracts.Querys;
 
 namespace Toro.Accounting.Infrastructure
 {
@@ -9,8 +10,20 @@ namespace Toro.Accounting.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
             services.TryAddScoped<ICommandDispatcher, CommandDispatcher>();
+            services.TryAddScoped<IQueryDispatcher, QueryDispatcher>();
 
             // INFO: Using https://www.nuget.org/packages/Scrutor for registering all Query and Command handlers by convention
+            services.Scan(selector =>
+            {
+                selector.FromAssembliesOf(typeof(IQueryHandler<,>))
+                        .AddClasses(filter =>
+                        {
+                            filter.AssignableTo(typeof(IQueryHandler<,>));
+                        })
+                        .AsImplementedInterfaces()
+                        .WithScopedLifetime();
+            });
+
             services.Scan(selector =>
             {
                 selector.FromAssembliesOf(typeof(ICommandHandler<,>))

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Toro.Accounting.Api.Dtos;
 using Toro.Accounting.Application.Commands;
-using Toro.Accounting.Application.Contracts;
+using Toro.Accounting.Application.Contracts.Commands;
 
 namespace Toro.Accounting.Controllers;
 

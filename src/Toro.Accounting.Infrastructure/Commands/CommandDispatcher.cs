@@ -1,4 +1,4 @@
-﻿using Toro.Accounting.Application.Contracts;
+﻿using Toro.Accounting.Application.Contracts.Commands;
 using Toro.Accounting.Domain.Commom;
 
 namespace Toro.Accounting.Infrastructure

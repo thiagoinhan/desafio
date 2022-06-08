@@ -1,6 +1,6 @@
 ﻿using Toro.Accounting.Domain.Commom;
 
-namespace Toro.Accounting.Application.Contracts
+namespace Toro.Accounting.Application.Contracts.Commands
 {
     public interface ICommandDispatcher
     {
