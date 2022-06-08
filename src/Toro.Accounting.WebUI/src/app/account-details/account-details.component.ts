@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IAccountDetails } from '../shared/interfaces/account_details';
+import { AccountDetailsService } from '../shared/services/account-details.service';
 
 @Component({
   selector: 'app-account-details',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor() { }
+  accountDetails: IAccountDetails = {
+    bank: "",
+    branch: "",
+    name: "",
+    accountNumber: "",
+    amount: 0
+  };
+
+  userId: string = "";
+
+  constructor(
+    private accountService: AccountDetailsService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-  }
+    this.userId = this.route.snapshot.params['userId'];
 
+    this.accountService.getAccountDetails(this.userId).subscribe((accountDetails) => {
+      this.accountDetails = accountDetails;
+    })
+  }
 }
