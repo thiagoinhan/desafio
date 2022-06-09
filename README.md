@@ -11,15 +11,15 @@ Este repositório tem como propósito implementar a user story [TORO-003](https:
 
 ## ⚡️ Quick Start
 
-Para entrar direto na demo da aplicação, basta acessar a url http://129.153.22.240/.
+Para entrar direto na demo da aplicação, acesse http://129.153.22.240/.
 
-Para rodar a aplicação localmente, basta executar o arquivo docker-compose.yml que está no repositório. Para isso, é necessário primeiro clonar o repositório:
+Para rodar a aplicação localmente, devemos executar o arquivo docker-compose.yml que está no repositório. Para isso, é necessário primeiro clonar o repositório:
 
 ```
 git clone https://github.com/thiagoinhan/desafio-toro-fullstack.git
 ```
 
-Então, basta entrar na raíz do repositório e digitar:
+Então, basta entrar na raiz do repositório e digitar:
 
 ```
 docker-compose up -d
@@ -34,18 +34,18 @@ Após isso, a aplicação já estará pronta para utilização. As urls serão:
 
 ## Backend (.NET Core)
 
-Para a execução do projeto de backend, basta entrar na raíz do projeto e executa os comandos:
+Para a execução do projeto de backend, estando na raiz do repositório, podemos executar os seguintes comandos:
 
 ```
 dotnet restore
 dotnet run --project src/Toro.Accounting.API/Toro.Accounting.API.csproj
 ```
 
-Após isso, basta navegar para a url https://localhost:7029/swagger/index.html e utilizar o swagger para realizar os acessos às apis.
+Após isso, o porjeto de backend estará disponível na url https://localhost:7029/swagger/index.html, onde podemos utilizar o swagger para realizar os acessos às apis.
 
 ## Frontend (Angular)
 
-Para a execução do projeto de frontend, estando na raíz do diretório, basta entrar na basta do projeto Toro.Accounting.WebUI e executar o comando ng serve, como à seguir:
+Para a execução do projeto de frontend, estando na raíz do diretório, basta entrar na pasta do projeto Toro.Accounting.WebUI e executar o comando ng serve, como à seguir:
 
 ```
 cd .\src\Toro.Accounting.WebUI\
@@ -58,10 +58,10 @@ A aplicação será iniciada na porta 4200 e poderá ser acessada pela url http:
 
 Para esta aplicação, foram criados quatro projetos de testes, onde o projeto Commom é o projeto onde os recursos utilizados por todos os outros projetos foram centralizados. Além dele, foram criados os projetos Domain, Integration e EndToEnd.
 
-Para facilitar a execução dos testes, foi utilizada a ferramenta Cake, que executa o build e os testes da aplicação de forma bem simples. Para isso, basta rodar o comando abaixo:
+Para facilitar a execução dos testes, podemos executar o comando abaixo.
 
 ```
-dotnet cake
+dotnet test
 ```
 
 Após o término, serão apresentados os resultados dos testes, com informações as detalhadas.
