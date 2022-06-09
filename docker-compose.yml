@@ -15,7 +15,7 @@ services:
       - mongo-compose-network
 
   desafio-toro-backend:
-    image: desafio-toro-backend
+    image: thiagoinhan/desafio-toro-backend:1.0.0
     ports: 
       - "5000:5000"
     restart: always
@@ -25,7 +25,7 @@ services:
       - mongo
 
   desafio-toro-frontend:
-    image: desafio-toro-frontend
+    image: thiagoinhan/desafio-toro-frontend:1.0.0
     ports: 
       - "4200:80"
     restart: always
