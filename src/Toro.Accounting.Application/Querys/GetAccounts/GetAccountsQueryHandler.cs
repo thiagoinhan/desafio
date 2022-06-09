@@ -21,7 +21,7 @@ namespace Toro.Accounting.Application.Querys
                 return null;
 
             return customers
-                .Select(c => new AccountDetails("352", "0001", c.Name, c.AccountNumber, c.AccountBalance))
+                .Select(c => new AccountDetails("352", "0001", c.Id, c.Name, c.CPF, c.AccountNumber, c.AccountBalance))
                 .ToList();
         }
     }

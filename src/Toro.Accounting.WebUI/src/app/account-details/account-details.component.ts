@@ -13,12 +13,15 @@ export class AccountDetailsComponent implements OnInit {
   accountDetails: IAccountDetails = {
     bank: "",
     branch: "",
+    id: "",
     userName: "",
+    cpf: "",
     accountNumber: "",
     accountBalance: 0
   };
 
   userId: string = "";
+  showClipboardMessage: boolean = false;
 
   constructor(
     private accountService: AccountDetailsService,
@@ -27,9 +30,35 @@ export class AccountDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.params['userId'];
-    
+
     this.accountService.getAccount(this.userId).subscribe((accountDetails) => {
       this.accountDetails = accountDetails;
     })
+  }
+
+  CopyTransferToClipboard = () => {
+    var transferTemplate = `
+    {
+        "event": "TRANSFER",
+        "target": {
+            "bank": "352",
+            "branch": "001",
+            "account": "${this.accountDetails.accountNumber}"
+        },
+        "origin": {
+            "bank": "001",
+            "branch": "001",
+            "cpf": "${this.accountDetails.cpf}"
+        },
+        "amount": 0
+    }`
+
+    navigator.clipboard.writeText(transferTemplate);
+
+    this.showClipboardMessage = true;
+
+    setTimeout(() => {
+      this.showClipboardMessage = false;
+    }, 3000)
   }
 }

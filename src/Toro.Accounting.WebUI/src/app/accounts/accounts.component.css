@@ -1,0 +1,9 @@
+.mat-icon {
+    transform: scale(0.9);
+    vertical-align: bottom;
+}
+
+th, td {
+    vertical-align: bottom;
+    text-align: center;
+  }

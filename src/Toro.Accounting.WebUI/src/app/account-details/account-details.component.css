@@ -6,3 +6,10 @@
 .text-purple {
     color: rgb(97, 49, 180);
 }
+
+.mat-icon {
+    cursor: pointer;
+    float: right;
+    transform: scale(0.9);
+    vertical-align: bottom;
+}

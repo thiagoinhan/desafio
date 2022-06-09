@@ -20,7 +20,7 @@ namespace Toro.Accounting.Application.Querys
             if (customer == null)
                 return null;
 
-            return new AccountDetails("352", "0001", customer.Name, customer.AccountNumber, customer.AccountBalance);
+            return new AccountDetails("352", "0001", customer.Id, customer.Name, customer.CPF, customer.AccountNumber, customer.AccountBalance);
         }
     }
 }
