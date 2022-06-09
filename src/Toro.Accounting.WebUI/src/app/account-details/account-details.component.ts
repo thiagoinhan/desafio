@@ -27,8 +27,8 @@ export class AccountDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.params['userId'];
-
-    this.accountService.getAccountDetails(this.userId).subscribe((accountDetails) => {
+    
+    this.accountService.getAccount(this.userId).subscribe((accountDetails) => {
       this.accountDetails = accountDetails;
     })
   }

@@ -12,8 +12,13 @@ export class AccountDetailsService {
 
   }
 
-  getAccountDetails(userId: string) {
-    let url = `${environment.baseUrl}/account/details?userId=${userId}`;
+  getAccount(userId: string) {
+    let url = `${environment.baseUrl}/accounts/${userId}`;
     return this.http.get<IAccountDetails>(url);
+  }
+
+  getAccounts() {
+    let url = `${environment.baseUrl}/accounts/`;
+    return this.http.get<IAccountDetails[]>(url);
   }
 }

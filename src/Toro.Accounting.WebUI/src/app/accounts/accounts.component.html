@@ -1,0 +1,18 @@
+<div class="container p-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Número da conta</th>
+                <th scope="col">Total na conta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td>{{account.userName}}</td>
+                <td>{{account.accountNumber}}</td>
+                <td>{{account.accountBalance | currency: 'BRL'}}</td>
+            </tr>          
+        </tbody>
+    </table>
+</div>

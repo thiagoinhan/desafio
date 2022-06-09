@@ -8,12 +8,14 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { LOCALE_ID } from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
+import { AccountsComponent } from './accounts/accounts.component';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    AccountsComponent
   ],
   imports: [
     BrowserModule,

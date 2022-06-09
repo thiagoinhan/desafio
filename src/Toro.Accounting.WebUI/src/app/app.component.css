@@ -10,3 +10,24 @@
     color: white;
     font-weight: 600;
 }
+
+.spacer {
+    flex: 1;
+}
+
+.toolbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(97, 49, 180);
+    color: white;
+    font-weight: 600;
+}
+
+.link {
+    cursor: pointer;
+}

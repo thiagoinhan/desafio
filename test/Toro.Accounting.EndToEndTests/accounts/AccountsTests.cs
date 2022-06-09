@@ -1,10 +1,7 @@
 ﻿using Moq;
 using Shouldly;
 using System.Net;
-using System.Text;
 using System.Text.Json;
-using Toro.Accounting.Api.Dtos;
-using Toro.Accounting.Application.Commands;
 using Toro.Accounting.Application.Contracts.Persistence;
 using Toro.Accounting.Application.Dtos;
 using Toro.Accounting.Commom.UnitTests.Mocks;
