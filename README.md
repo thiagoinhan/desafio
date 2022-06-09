@@ -23,7 +23,12 @@ Então, basta entrar na raíz do repositório e digitar:
 docker-compose up -d
 ```
 
-Após isso, a aplicação já estará pronta para utilização.
+Após isso, a aplicação já estará pronta para utilização. As urls serão:
+
+- Frontend:  http://localhost:4200/
+- Backend: http://localhost:7029/swagger/index.html
+- Banco de dados (MongoDb): http://localhost:27017/
+- Db Admin Interface (Mongo Express): http://localhost:8081/
 
 ## Backend (.NET Core)
 
