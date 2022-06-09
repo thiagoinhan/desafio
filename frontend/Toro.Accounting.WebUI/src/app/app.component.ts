@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'Accounting';
 
   RedirectToSwagger = function () {
-    document.location.href = `${environment.baseUrl}/swagger/index.html`;
+    window.open(`${environment.baseUrl}/swagger/index.html`, "_blank");
   }
 }

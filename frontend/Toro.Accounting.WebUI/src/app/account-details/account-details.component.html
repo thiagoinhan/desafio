@@ -7,7 +7,6 @@
             <div class="card mt-3">
                 <div class="card-header card-purple">
                     <span>Meus dados bancários</span>
-                    <mat-icon (click)="CopyTransferToClipboard()">filter_none</mat-icon>
                 </div>
                 <div class="card-body">
                     <div>Banco: {{accountDetails.bank}}</div>
@@ -22,6 +21,14 @@
                 </div>
                 <div class="card-body">
                     <div>Saldo: {{accountDetails.accountBalance | currency:'BRL'}} </div>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header card-purple">
+                    Preview do json
+                </div>
+                <div class="card-body">
+                    <pre>{{ makeDepositRequest | json }}</pre>
                 </div>
             </div>
         </div>
