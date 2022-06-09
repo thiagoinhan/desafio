@@ -2,7 +2,7 @@
 using Toro.Accounting.Application.Contracts.Querys;
 using Toro.Accounting.Application.Dtos;
 
-namespace Toro.Accounting.Application.Querys.GetAccountDetails
+namespace Toro.Accounting.Application.Querys
 {
     public class GetAccountDetailsQueryHandler : IQueryHandler<GetAccountDetailsQuery, AccountDetails>
     {

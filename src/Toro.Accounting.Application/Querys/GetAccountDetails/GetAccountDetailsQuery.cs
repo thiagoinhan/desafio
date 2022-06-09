@@ -1,7 +1,7 @@
 ﻿using Toro.Accounting.Application.Dtos;
 using Toro.Accounting.Domain.Commom;
 
-namespace Toro.Accounting.Application.Querys.GetAccountDetails
+namespace Toro.Accounting.Application.Querys
 {
     public class GetAccountDetailsQuery : IQuery<AccountDetails>
     {

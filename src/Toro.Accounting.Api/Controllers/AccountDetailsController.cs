@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Toro.Accounting.Application.Contracts.Querys;
 using Toro.Accounting.Application.Dtos;
-using Toro.Accounting.Application.Querys.GetAccountDetails;
+using Toro.Accounting.Application.Querys;
 
 namespace Toro.Accounting.Controllers;
 
 [ApiController]
-[Route("account")]
+[Route("accounts")]
 public class AccountDetailsController : ControllerBase
 {
     protected readonly IQueryDispatcher _queryDispatcher;
@@ -16,8 +16,15 @@ public class AccountDetailsController : ControllerBase
         _queryDispatcher = queryDispatcher;
     }
 
-    [Route("details")]
     [HttpGet()]
+    [ProducesResponseType(typeof(List<AccountDetails>), StatusCodes.Status200OK)]
+    public async Task<ActionResult<List<AccountDetails>>> GetAllAccounts()
+    {
+        var accounts = await _queryDispatcher.Dispatch(new GetAccountsQuery());
+        return Ok(accounts);
+    }
+
+    [HttpGet("{userId}")]
     [ProducesResponseType(typeof(AccountDetails), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<AccountDetails>> GetLoggedUserAccountDetails(string userId)
