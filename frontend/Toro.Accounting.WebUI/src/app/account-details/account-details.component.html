@@ -2,11 +2,11 @@
     <div class="row" *ngIf="accountDetails.userName">
         <div class="col-4 offset-4">
             <div class="text-center text-purple">
-                <h3>{{accountDetails.userName}}</h3>
+                <h2>{{accountDetails.userName}}</h2>
             </div>
             <div class="card mt-3">
                 <div class="card-header card-purple">
-                    Meus dados bancários
+                    <span>Meus dados bancários</span>
                     <mat-icon (click)="CopyTransferToClipboard()">filter_none</mat-icon>
                 </div>
                 <div class="card-body">

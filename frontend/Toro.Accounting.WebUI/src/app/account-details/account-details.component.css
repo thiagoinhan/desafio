@@ -1,6 +1,7 @@
 .card-purple {
     background-color: rgb(97, 49, 180);
     color: white;
+    font-size: 17px;
 }
 
 .text-purple {
@@ -10,6 +11,6 @@
 .mat-icon {
     cursor: pointer;
     float: right;
-    transform: scale(0.9);
+    transform: scale(0.82);
     vertical-align: bottom;
 }
