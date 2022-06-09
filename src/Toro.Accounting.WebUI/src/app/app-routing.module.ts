@@ -4,6 +4,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { AccountsComponent } from './accounts/accounts.component';
 
 const routes: Routes = [
+  { path: '', component: AccountsComponent },
   { path: 'accounts/:userId', component: AccountDetailsComponent },
   { path: 'accounts', component: AccountsComponent }
 ];
