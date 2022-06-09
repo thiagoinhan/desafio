@@ -28,13 +28,13 @@ docker-compose up -d
 Após isso, a aplicação já estará pronta para utilização. As urls serão:
 
 - Frontend:  http://localhost:4200/
-- Backend: http://localhost:7029/swagger/index.html
+- Backend: http://localhost:5000/swagger/index.html
 - Banco de dados (MongoDb): http://localhost:27017/
 - Db Admin Interface (Mongo Express): http://localhost:8081/
 
 ## 🗄️ Backend (.NET Core)
 
-Para a execução do projeto de backend, estando na raiz do repositório, podemos executar os seguintes comandos:
+Para a execução do projeto de backend, estando na pasta **backend** do repositório, podemos executar os seguintes comandos:
 
 ```
 dotnet restore
@@ -45,10 +45,9 @@ Após isso, o porjeto de backend estará disponível na url https://localhost:70
 
 ## 🌐 Frontend (Angular)
 
-Para a execução do projeto de frontend, estando na raíz do diretório, basta entrar na pasta do projeto Toro.Accounting.WebUI e executar o comando ng serve, como à seguir:
+Para a execução do projeto de frontend, estando na pasta **frontend/Toro.Accounting.WebUI** do repositório, podemos executar o comando ng serve, como à seguir:
 
 ```
-cd .\src\Toro.Accounting.WebUI\
 ng serve
 ```
 
@@ -58,7 +57,7 @@ A aplicação será iniciada na porta 4200 e poderá ser acessada pela url http:
 
 Para esta aplicação, foram criados quatro projetos de testes, onde o projeto Commom é o projeto onde os recursos utilizados por todos os outros projetos foram centralizados. Além dele, foram criados os projetos Domain, Integration e EndToEnd.
 
-Para facilitar a execução dos testes, podemos executar o comando abaixo.
+Para facilitar a execução dos testes, estando na pasta **backend** do repositório, podemos executar o comando abaixo.
 
 ```
 dotnet test
