@@ -11,6 +11,8 @@ Este repositório tem como propósito implementar a user story [TORO-003](https:
 
 ## ⚡️ Quick Start
 
+Para entrar direto na demo da aplicação, basta acessar a url http://129.153.22.240/.
+
 Para rodar a aplicação localmente, basta executar o arquivo docker-compose.yml que está no repositório. Para isso, é necessário primeiro clonar o repositório:
 
 ```
