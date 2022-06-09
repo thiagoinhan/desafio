@@ -17,13 +17,35 @@ Para rodar a aplicação localmente, basta executar o arquivo docker-compose.yml
 git clone https://github.com/thiagoinhan/desafio-toro-fullstack.git
 ```
 
-Então, basta entrar dentro do repositório e digitar:
+Então, basta entrar na raíz do repositório e digitar:
 
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 Após isso, a aplicação já estará pronta para utilização.
+
+## Backend (.NET Core)
+
+Para a execução do projeto de backend, basta entrar na raíz do projeto e executa os comandos:
+
+```
+dotnet restore
+dotnet run --project src/Toro.Accounting.API/Toro.Accounting.API.csproj
+```
+
+Após isso, basta navegar para a url https://localhost:7029/swagger/index.html e utilizar o swagger para realizar os acessos às apis.
+
+## Frontend (Angular)
+
+Para a execução do projeto de frontend, estando na raíz do diretório, basta entrar na basta do projeto Toro.Accounting.WebUI e executar o comando ng serve, como à seguir:
+
+```
+cd .\src\Toro.Accounting.WebUI\
+ng serve
+```
+
+A aplicação será iniciada na porta 4200 e poderá ser acessada pela url http://localhost:4200/. Ao entrar, será exibida a lista de clientes com os detalhes de suas contas
 
 ## 🧪 Testes
 
@@ -35,7 +57,7 @@ Para facilitar a execução dos testes, foi utilizada a ferramenta Cake, que exe
 dotnet cake
 ```
 
-Após o término, serão apresentados os resultados dos testes, com informações detalhadas
+Após o término, serão apresentados os resultados dos testes, com informações as detalhadas.
 
 
 
