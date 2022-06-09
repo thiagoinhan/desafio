@@ -19,13 +19,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    app.Services.GetRequiredService<IMongoDatabase>().SeedData();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
+app.Services.GetRequiredService<IMongoDatabase>().SeedData();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
