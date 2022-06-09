@@ -22,13 +22,14 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-app.Services.GetRequiredService<IMongoDatabase>().SeedData();
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+if (!app.Environment.IsEnvironment("test"))
+{
+    app.Services.GetRequiredService<IMongoDatabase>().SeedData();
+}
 
 app.MapControllers();
-
 app.UseCors();
 app.Run();
 
