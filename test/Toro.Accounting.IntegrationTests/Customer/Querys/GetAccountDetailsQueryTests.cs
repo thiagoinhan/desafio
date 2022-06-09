@@ -1,7 +1,7 @@
 ﻿using Moq;
 using Shouldly;
 using Toro.Accounting.Application.Contracts.Persistence;
-using Toro.Accounting.Application.Querys.GetAccountDetails;
+using Toro.Accounting.Application.Querys;
 using Toro.Accounting.Commom.UnitTests.Mocks;
 
 namespace Toro.Accounting.IntegrationTests.Customer.Querys
