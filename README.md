@@ -32,7 +32,7 @@ Após isso, a aplicação já estará pronta para utilização. As urls serão:
 - Banco de dados (MongoDb): http://localhost:27017/
 - Db Admin Interface (Mongo Express): http://localhost:8081/
 
-## Backend (.NET Core)
+## 🗄️ Backend (.NET Core)
 
 Para a execução do projeto de backend, estando na raiz do repositório, podemos executar os seguintes comandos:
 
@@ -43,7 +43,7 @@ dotnet run --project src/Toro.Accounting.API/Toro.Accounting.API.csproj
 
 Após isso, o porjeto de backend estará disponível na url https://localhost:7029/swagger/index.html, onde podemos utilizar o swagger para realizar os acessos às apis.
 
-## Frontend (Angular)
+## 🌐 Frontend (Angular)
 
 Para a execução do projeto de frontend, estando na raíz do diretório, basta entrar na pasta do projeto Toro.Accounting.WebUI e executar o comando ng serve, como à seguir:
 
