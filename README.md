@@ -73,6 +73,13 @@ Na figura abaixo temos uma estrutura geral da aplicação e camadas, onde o fron
 
 ![image](https://user-images.githubusercontent.com/48460079/172946801-53e59243-3219-46a8-9429-efaad2f0b858.png)
 
+## ▶️ CI/CD
+
+O deploy da aplicação é feito via github actions, utilizando um self-hosted agent, hopedado na nuvem da Oracle. Quando um push é feito, um workflow é disparado no github actions, onde o primeiro job (build-images) é responsável por fazer o build das imagens de front e backend. O segundo job (run-docker-compose) é o responsável por dar um pull e subir os novos containers via docker-compose.
+
+![image](https://user-images.githubusercontent.com/48460079/173000654-bf1d8dde-ce0f-4ec4-8878-39134e1ad3fe.png)
+
+
 
 
 
