@@ -65,6 +65,15 @@ dotnet test
 
 Após o término, serão apresentados os resultados dos testes, com informações as detalhadas.
 
+## 🏛️ Arquitetura
+
+A arquitetura da aplicação é baseada na clean architecture, para facilitar a manutenção, mantendo o desacoplamento entre as camadas. Além disso, também foi implementada uma estrutura de CQRS, para que os comandos e querys da aplição sejam fluxos completamente separados, permitindo escalar a aplicação de uma forma mais fácil.
+
+Na figura abaixo temos uma estrutura geral da aplicação e camadas, onde o frontend é desacoplado do backend:
+
+![image](https://user-images.githubusercontent.com/48460079/172946801-53e59243-3219-46a8-9429-efaad2f0b858.png)
+
+
 
 
 
