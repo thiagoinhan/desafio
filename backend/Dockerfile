@@ -1,7 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal as build
 WORKDIR /app
 COPY . .
-RUN dotnet --version
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app/published-app
 
