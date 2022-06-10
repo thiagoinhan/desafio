@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: App Docker-Compose CI/CD
 
 on:
   push:
@@ -8,12 +8,39 @@ on:
 
 jobs:
 
-  build:
+  build-images:
+
+    runs-on: self-hosted
+
+    steps:    
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+        DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+      run: |
+        docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+    - name: docker build backend
+      run: | 
+        cd backend
+        docker build . -t thiagoinhan/desafio-toro-backend-arm64:1.0.0 --platform linux/arm64
+    - name: docker push backend
+      run: |
+        docker push thiagoinhan/desafio-toro-backend-arm64:1.0.0
+    - name: docker build frontend
+      run: |
+        cd frontend/Toro.Accounting.WebUI
+        docker build . -t thiagoinhan/desafio-toro-frontend-arm64:1.0.0 --platform linux/arm64
+    - name: docker push frontend
+      run: |
+        docker push thiagoinhan/desafio-toro-frontend-arm64:1.0.0
+
+  run-docker-compose:
 
     runs-on: self-hosted
 
     steps:    
     - name: Pull images
-      run: docker-compose pull
+      run: docker-compose -f docker-compose-arm64.yml pull
     - name: Run compose
-      run: docker-compose up -d
+      run: docker-compose -f docker-compose-arm64.yml up -d
