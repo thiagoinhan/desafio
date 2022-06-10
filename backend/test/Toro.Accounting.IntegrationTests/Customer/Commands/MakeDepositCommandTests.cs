@@ -4,7 +4,7 @@ using Toro.Accounting.Application.Commands;
 using Toro.Accounting.Application.Contracts.Persistence;
 using Toro.Accounting.Commom.UnitTests.Mocks;
 
-namespace Toro.Accounting.IntegrationTests.Customer.Commands
+namespace Toro.Accounting.IntegrationTests.Commands
 {
     public class MakeDepositCommandTests
     {
