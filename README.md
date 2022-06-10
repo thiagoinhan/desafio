@@ -67,7 +67,7 @@ Após o término, serão apresentados os resultados dos testes, com informaçõe
 
 ## 🏛️ Arquitetura
 
-A arquitetura da aplicação é baseada na clean architecture, para facilitar a manutenção mantendo, o desacoplamento entre as camadas. Além disso, também foi implementada uma estrutura de CQRS, para que os comandos e querys da aplição sejam totalmente desacoplados, permitindo escalar a aplicação de uma forma mais fácil.
+A arquitetura da aplicação é baseada na clean architecture, para facilitar a manutenção, mantendo o desacoplamento entre as camadas. Além disso, também foi implementada uma estrutura de CQRS, para que os comandos e querys da aplição sejam fluxos completamente separados, permitindo escalar a aplicação de uma forma mais fácil.
 
 Na figura abaixo temos uma estrutura geral da aplicação e camadas, onde o frontend é desacoplado do backend:
 
