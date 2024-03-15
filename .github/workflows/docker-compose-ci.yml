@@ -18,7 +18,8 @@ jobs:
       env:
         DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
         DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
-      run: |
+      run: | 
+        echo "O usuário atual é: $(whoami)" |
         echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin        
     - name: docker build backend
       run: | 
