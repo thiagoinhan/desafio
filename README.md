@@ -9,7 +9,7 @@ Este repositório tem como propósito implementar a user story [TORO-003](https:
 - Angular CLI 14.0.0 - [Download](https://angular.io/cli)
 - Docker 20.10.5 - [Download](https://www.docker.com/get-started/)
 
-## ⚡️ Quick Start
+## ⚡️ Quick Start 
 
 Para entrar direto na demo da aplicação, acesse http://129.153.22.240/.
 
