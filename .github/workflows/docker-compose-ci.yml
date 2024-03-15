@@ -12,14 +12,17 @@ jobs:
 
     runs-on: self-hosted
 
-    steps:    
+    steps:
+    - name: Executar comando whoami
+      run: |
+          echo "O usuário atual é: $(whoami)"
+    
     - uses: actions/checkout@v2
     - name: docker login
       env:
         DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
         DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
-      run: | 
-        echo "O usuário atual é: $(whoami)" |
+      run: |         
         echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin        
     - name: docker build backend
       run: | 
